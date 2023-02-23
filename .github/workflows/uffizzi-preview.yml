@@ -89,12 +89,12 @@ jobs:
       server: https://app.uffizzi.com
       pr-number: ${{ needs.cache-compose-file.outputs.pr-number }}
       description: |
-        The meilisearch preview environment contains a web terminal from where you can run the
-        `meilisearch` command. You should be able to access this instance of meilisearch running in
-        the preview from the link Meilisearch Endpoint link given below.
+        The exmaple cli preview environment contains a web terminal from where you can run the
+        `docker-gs-ping` command. You should be able to access this instance of docker-gs-ping running in
+        the preview from the link _Echo Server Endpoint_ link given below.
          
-        Web Terminal Endpoint : <uffizzi-url>
-        Meilisearch Endpoint : <uffizzi-url>/meilisearch
+        _Web Terminal Endpoint_ : `UFFIZZI_URL`
+        _Echo Servevr Endpoint_ : `UFFIZZI_URL/echo`
     permissions:
       contents: read
       pull-requests: write
