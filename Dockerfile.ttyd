@@ -12,7 +12,7 @@ COPY    *.go ./
 
 RUN     go build -o /docker-gs-ping
 
-## Deploy
+## Run
 
 FROM    uffizzi/ttyd:alpine
 
@@ -21,8 +21,8 @@ WORKDIR /
 RUN     apk update --quiet \
         && apk add -q --no-cache libgcc tini curl
 
-COPY --from=build /docker-gs-ping /bin/docker-gs-ping
-RUN     ln -s /bin/docker-gs-ping /docker-gs-ping
+COPY    --from=build /docker-gs-ping /docker-gs-ping
+RUN     chmod +x  ls -s docker-gs-ping /bin/docker-gs-ping
 
 ENTRYPOINT ["tini", "--"]
 CMD     ["ttyd", "/bin/zsh"]

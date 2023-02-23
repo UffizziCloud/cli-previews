@@ -12,13 +12,14 @@ COPY *.go ./
 
 RUN go build -o /docker-gs-ping
 
-## Deploy
+## Run
 
 FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 
 COPY --from=build /docker-gs-ping /docker-gs-ping
+RUN chmod +x docker-gs-ping && ls -s docker-gs-ping /bin/docker-gs-ping
 
 EXPOSE 8080
 
