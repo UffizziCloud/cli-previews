@@ -21,7 +21,7 @@ RUN apk update --quiet \
 WORKDIR /
 
 COPY --from=build /docker-gs-ping /bin/docker-gs-ping
-RUN ln -s /bin/docker-gs-ping /docker-gs-ping
+RUN chmod +x /bin/docker-gs-ping && ln -s /bin/docker-gs-ping /docker-gs-ping
 
 ENTRYPOINT ["tini", "--"]
 CMD     ["ttyd", "/bin/zsh"]
