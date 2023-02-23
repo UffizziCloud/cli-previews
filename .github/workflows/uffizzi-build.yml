@@ -51,7 +51,7 @@ jobs:
         run: |
           CLI_PREVIEW_IMAGE=${{ needs.build-example.outputs.tags }}
           export CLI_PREVIEW_IMAGE
-          envsubst '${CLI_PREVIEW_IMAGE} < ./docker-compose.uffizzi.yml > docker-compose.rendered.yml
+          envsubst < ./docker-compose.uffizzi.yml > docker-compose.rendered.yml
           cat docker-compose.rendered.yml
       - name: Upload Rendered Compose File as Artifact
         uses: actions/upload-artifact@v3

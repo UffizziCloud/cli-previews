@@ -7,7 +7,7 @@ x-uffizzi:
 
 services:
   cli-previews:
-    image: "${CLI_PREVIEW_IMAGE}"
+    image: ${CLI_PREVIEW_IMAGE}
     restart: unless-stopped
     deploy:
       resources:
